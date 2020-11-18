@@ -1,0 +1,40 @@
+<div>
+
+    <app-child [headerContent]="firstHeading"></app-child>
+    <app-child [headerContent]="secondHeading"></app-child>
+
+    <b>Parent Data</b>
+    {{firstHeading}}
+    {{secondHeading}}
+
+    <input type="button" value="Update Heading" (click)="updateHeading()" />
+
+    <div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Filter Employee</label>
+          <input type="text" 
+                 class="form-control" 
+                 id="exampleInputEmail1" 
+
+                 [ngModel]="filterText" 
+                 (ngModelChange)="filterEmployeeList($event)"
+
+                 aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">Enter the value you want to filter...{{filterText}}</small>
+        </div>
+    </div>
+    <section>
+        <div *ngFor="let employee of filteredList" class="card" style="width: 18rem; display: inline-block; margin: 5px;">
+            <img [src]="employee.avatar" class="card-img-top" [alt]="employee.name">
+            <div class="card-body">
+                <h5 class="card-title">{{employee.name}}</h5>
+
+                <p *ngIf="employee.id % 2 == 0"><b>Even: </b>This is the employee for the company with the id: {{employee.id}}</p>
+                <p *ngIf="employee.id % 2 == 1"><b>Odd: </b>This is the employee for the company with the id: {{employee.id}}</p>
+
+                <button *delayRendering type="button" style="margin-right: 5px;" (click)="deleteEmployee(employee.name, employee.id)" class="btn btn-primary">Update</button>
+                <button type="button" (click)="deleteEmployee(employee.name, employee.id)" class="btn btn-primary">Delete</button>
+            </div>
+        </div>
+    </section>
+</div>

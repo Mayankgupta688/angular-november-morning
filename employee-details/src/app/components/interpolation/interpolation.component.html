@@ -1,0 +1,15 @@
+<!--
+
+    <h1>User Name: {{ userName }}</h1>
+    <h2>User Age is {{ userAge }}</h2>
+
+-->
+
+<h1>{{getDetails()}}</h1>
+<h2>User Age is: {{userAge}}</h2>
+<h3>User Designation is {{userDesignation?userDesignation: 'Unknown'}}</h3>
+<h4>Salary from the Array: {{salaryArray[0]}}</h4><hr/>
+
+<h2>User Details:</h2>
+<h3>Address: {{userDetailObject.address}}</h3>
+<h3>Employee Salary: {{userDetailObject['salary']}}</h3>
