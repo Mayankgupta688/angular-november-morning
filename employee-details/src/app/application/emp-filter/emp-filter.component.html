@@ -1,0 +1,13 @@
+<div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Filter Employee for {{this.appDataService.userName}}</label>
+      <input type="text" 
+             class="form-control" 
+             id="exampleInputEmail1" 
+             aria-describedby="emailHelp" 
+             [(ngModel)]="filterText">
+      <small id="emailHelp" class="form-text text-muted">Enter the value you want to filter...</small><br/>
+      <button type="button" (click)="filterEmployees()" class="btn btn-primary">Filter Employee</button>
+      <button type="button" (click)="clearFilter()" class="btn btn-primary">Clear Filter</button>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="emp_list">
+    <h1>TechnoFunnel Employee List for {{userName}}</h1><hr/>
+    <app-emp-filter (filterEmployeesEvent)="filterEmployeeList($event)" 
+                    (clearFilterEvent)="clearEmployeeFilter($event)">
+    </app-emp-filter>
+    <app-emp-theme (updateThemeEvent)="updateThemeEvent($event)"></app-emp-theme>
+    <app-hide-image></app-hide-image>
+    <div *ngFor="let employee of filteredList" style="width: 18rem; display: inline-block; margin: 5px;">
+        <app-emp-details [employee]="employee" [applicationTheme]="applicationTheme"
+                         (notifyDelete)="deleteEmployeeFromList($event)">
+        </app-emp-details>
+    </div><br/><br/>
+    <button type="button" (click)="showEmployeeForm()" class="btn btn-primary">Add Employee</button><br/><br/>
+    <div *ngIf="showForm">
+        <app-add-employee></app-add-employee>
+    </div>
+    
+</div>

@@ -8,6 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ChildComponent {
   @Input() headerContent: string;
 
+  ngOnInit() {
+    if(!this.headerContent) {
+      this.headerContent = "Sample Text Initially...."
+    }
+  }
+
   updateData() {
     this.headerContent = "kajgfasj";
   }

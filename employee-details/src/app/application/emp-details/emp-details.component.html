@@ -1,0 +1,11 @@
+<div class="card">
+    <img *ngIf="showImage" [src]="employee.avatar" class="card-img-top" [alt]="employee.name">
+    <div class="card-body" [style.color]="applicationTheme">
+        <h5 class="card-title">Name: {{employee.name | uppercase}}</h5>
+        <h5 class="card-title">Name: {{employee.name | lowercase}}</h5>
+        <h6>{{employee.name}}</h6>
+        <p>This is the employee for the company with the id: {{employee.id}}</p>
+        <button *delayRendering type="button" style="margin-right: 5px;" class="btn btn-primary">Update</button>
+        <button type="button" (click)="deleteEmployee({'empId': employee.id, 'empName': employee.name})" class="btn btn-primary">Delete</button>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="form-group">
+    <label for="exampleInputEmail1">Enter Name</label>
+    <input type="text" 
+           class="form-control" 
+           id="exampleInputEmail1" 
+           aria-describedby="emailHelp" 
+           [(ngModel)]="userName"><br/>
+
+    <label for="exampleInputEmail1">Enter Id:</label>
+    <input type="text" 
+           class="form-control" 
+           id="exampleInputEmail1" 
+           aria-describedby="emailHelp" 
+           [(ngModel)]="userId"><br/>
+
+
+    <button type="button" (click)="appDataService.addEmployeeData({'userId': userId, 'userName': userName})" class="btn btn-primary">Add Employee</button>
+  </div>

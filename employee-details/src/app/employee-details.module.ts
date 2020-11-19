@@ -8,11 +8,19 @@ import { InterpolationComponent } from './components/interpolation/interpolation
 import { DelayRenderingDirective } from "./directives/delay-rendering.directive";
 
 import { FormsModule } from "@angular/forms";
-import { ChildComponent } from './components/child/child.component'
+import { ChildComponent } from './components/child/child.component';
+import { EmpListComponent } from './application/emp-list/emp-list.component';
+import { EmpDetailsComponent } from './application/emp-details/emp-details.component';
+import { EmpFilterComponent } from './application/emp-filter/emp-filter.component';
+import { EmpThemeComponent } from './application/emp-theme/emp-theme.component';
+import { HideImageComponent } from './application/hide-image/hide-image.component';
+
+import { HttpClientModule } from "@angular/common/http";
+import { AddEmployeeComponent } from './application/add-employee/add-employee.component';
 
 @NgModule({
-    declarations: [DelayRenderingDirective, EmployeeListComponent, HeaderComponent, FooterComponent, RootComponent, InterpolationComponent, ChildComponent],
-    imports: [BrowserModule, FormsModule],
-    bootstrap: [EmployeeListComponent]
+    declarations: [DelayRenderingDirective, EmployeeListComponent, HeaderComponent, FooterComponent, RootComponent, InterpolationComponent, ChildComponent, EmpListComponent, EmpDetailsComponent, EmpFilterComponent, EmpThemeComponent, HideImageComponent, AddEmployeeComponent],
+    imports: [BrowserModule, FormsModule, HttpClientModule],
+    bootstrap: [EmpListComponent]
 })
 export class EmployeeDetailsModule {}
