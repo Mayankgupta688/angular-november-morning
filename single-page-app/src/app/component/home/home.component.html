@@ -1,0 +1,9 @@
+<div *ngFor="let employee of employeeList" style="width: 400px; padding: 5px; margin: 5px;border: 1px solid grey;" >
+    <h1>Employee Name: {{employee.name}}</h1>
+    <h2>Employee Id: {{employee.id}}</h2>
+    <img [src]="employee.avatar" /><br/><br/>
+
+    <button value="Show Details" (click)="redirectToDetails(employee.id, employee.name)">Show Details</button>
+</div>
+
+<button value="Show Details" (click)="addEmployee()">Add Employee</button>

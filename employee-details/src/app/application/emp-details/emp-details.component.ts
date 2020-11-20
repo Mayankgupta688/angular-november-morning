@@ -19,6 +19,15 @@ export class EmpDetailsComponent {
     })
   }
 
+  ngOnChanges(changes) {
+  }
+
+  ngOnInit() {
+  }
+
+  ngDoCheck() {
+  }
+
   deleteEmployee(employee) {
     alert(`We are going to delete Employee with id ${employee.empName}`);
     this.notifyDelete.emit(employee);

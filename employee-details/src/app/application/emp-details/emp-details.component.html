@@ -1,8 +1,9 @@
 <div class="card">
     <img *ngIf="showImage" [src]="employee.avatar" class="card-img-top" [alt]="employee.name">
     <div class="card-body" [style.color]="applicationTheme">
-        <h5 class="card-title">Name: {{employee.name | uppercase}}</h5>
-        <h5 class="card-title">Name: {{employee.name | lowercase}}</h5>
+        <h5 class="card-title">Name: {{employee.name | uppercase | convertUnderscoreToSpaces : "_": "-"}}</h5>
+        <h5 class="card-title">Name: {{employee.name | lowercase | convertUnderscoreToSpaces : "_": "-"}}</h5>
+        <h6>{{employee.name | convertUnderscoreToSpaces : "_" : "-" | convertUnderscoreToSpaces : "-" : " " | convertUnderscoreToSpaces : " " : "_Sample_ "}}</h6>
         <h6>{{employee.name}}</h6>
         <p>This is the employee for the company with the id: {{employee.id}}</p>
         <button *delayRendering type="button" style="margin-right: 5px;" class="btn btn-primary">Update</button>

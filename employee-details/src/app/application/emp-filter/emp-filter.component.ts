@@ -8,6 +8,7 @@ import { AppDataSevice } from '../services/app-data.service';
 })
 export class EmpFilterComponent {
   filterText: string;
+  fiterTextData: string = "";
   @Output() filterEmployeesEvent: EventEmitter<string> = new EventEmitter<string>();
   @Output() clearFilterEvent: EventEmitter<string> = new EventEmitter<string>();
 
@@ -16,6 +17,10 @@ export class EmpFilterComponent {
   filterEmployees() {
     alert(this.filterText);
     this.filterEmployeesEvent.emit(this.filterText);
+  }
+
+  ngDoCheck() {
+    this.fiterTextData = `Changing Value from  ${this.filterText}`
   }
 
   clearFilter() {
